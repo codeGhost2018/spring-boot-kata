@@ -3,7 +3,7 @@ package com.tim.kata.entity;
 import lombok.Data;
 
 @Data
-public class UserEntity {
+public class UserDO {
 
     private String userId;
     private String userName;

@@ -2,18 +2,15 @@ package com.tim.kata.core;
 
 import com.tim.kata.FieldLoader;
 import com.tim.kata.dto.UserDTO;
-import com.tim.kata.entity.UserEntity;
 import com.tim.kata.vo.UserVO;
 import lombok.*;
 import lombok.experimental.Accessors;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 
-import java.util.Arrays;
-
 @Accessors(fluent = true)
 @Setter
-public class UserVoConvert extends DecoratorAdapter<UserVO, UserDTO> {
+public class UserDto2UserVoConvert extends DecoratorAdapter<UserVO, UserDTO> {
 
     private boolean loadMember;
     private boolean loadSecretKey;
@@ -21,11 +18,11 @@ public class UserVoConvert extends DecoratorAdapter<UserVO, UserDTO> {
     @Autowired
     private FieldLoader fieldLoader;
 
-    public UserVoConvert() {
+    public UserDto2UserVoConvert() {
         super(null);
     }
 
-    public UserVoConvert(Decorator decorator) {
+    public UserDto2UserVoConvert(Decorator decorator) {
         super(decorator);
 
     }

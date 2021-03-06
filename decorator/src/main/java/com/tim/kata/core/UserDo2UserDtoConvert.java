@@ -1,30 +1,30 @@
 package com.tim.kata.core;
 
 import com.tim.kata.dto.UserDTO;
-import com.tim.kata.entity.UserEntity;
+import com.tim.kata.entity.UserDO;
 import org.springframework.beans.BeanUtils;
 
 import java.util.Arrays;
 
-public class UserDtoConvert extends DecoratorAdapter<UserDTO, UserEntity> {
+public class UserDo2UserDtoConvert extends DecoratorAdapter<UserDTO, UserDO> {
 
-    public UserDtoConvert() {
+    public UserDo2UserDtoConvert() {
         super(null);
     }
 
-    public UserDtoConvert(Decorator decorator) {
+    public UserDo2UserDtoConvert(Decorator decorator) {
         super(decorator);
     }
 
     @Override
-    protected UserDTO doConvert(UserEntity input) {
+    protected UserDTO doConvert(UserDO input) {
         UserDTO userDTO = new UserDTO();
         BeanUtils.copyProperties(input, userDTO);
         return userDTO;
     }
 
     @Override
-    public void appendExtras(UserEntity input, UserDTO output) {
+    public void appendExtras(UserDO input, UserDTO output) {
         output.setClassNames(Arrays.asList("一年一班", "二年四班", "三年二班"));
     }
 }

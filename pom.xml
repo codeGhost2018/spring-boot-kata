@@ -23,6 +23,7 @@
 
     <modules>
         <module>state-machine</module>
+        <module>decorator</module>
 
     </modules>
 
