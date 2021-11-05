@@ -6,7 +6,6 @@ import com.alicp.jetcache.anno.support.ConfigProvider;
 import com.alicp.jetcache.event.CacheEvent;
 import com.alicp.jetcache.event.CachePutEvent;
 import com.alicp.jetcache.support.JetCacheExecutor;
-import com.sun.javafx.binding.StringFormatter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -48,7 +47,7 @@ public class WriteBackMonitor implements CacheMonitor {
                 while (true) {
                     String key = activeKeyss.poll();
                     if (key == null) break;
-                    System.out.println(StringFormatter.format("Write Cache key: %s, value: %s", key, cache.get(key)).getValue());
+                    System.out.println(String.format("Write Cache key: %s, value: %s", key, cache.get(key)));
 
                 }
             }catch (Exception exception) {
