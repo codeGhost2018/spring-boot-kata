@@ -24,6 +24,7 @@
     <modules>
         <module>state-machine</module>
         <module>decorator</module>
+        <module>jetcache-write-back</module>
 
     </modules>
 
